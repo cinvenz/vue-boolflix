@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <PageHeader />
+    <PageMain />
+  </div>
+</template>
+
+<script>
+import PageHeader from "@/components/PageHeader.vue";
+import PageMain from "@/components/PageMain.vue";
+
+export default {
+  components: {
+    PageHeader,
+    PageMain,
+  },
+};
+</script>
+
+<style lang="scss">
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+}
+</style>
