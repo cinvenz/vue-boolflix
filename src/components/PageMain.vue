@@ -1,26 +1,36 @@
 <template>
-  <div>
+  <div class="row row-cols-5 g-4 container-cards py-5">
     <h2 v-if="arrMovies.length > 0">Movies</h2>
-    <ul v-for="objMovie in arrMovies" :key="objMovie.id">
-      <li>{{ objMovie.title }}</li>
-      <li>{{ objMovie.original_title }}</li>
-      <li>{{ objMovie.original_language }}</li>
-      <li>{{ objMovie.vote_average }}</li>
-    </ul>
-
+    <CardTvSeries
+      v-for="movie in arrMovies"
+      :key="movie.id"
+      :movie="movie"
+      :name="movie.title"
+      :originallanguage="movie.original_language"
+      :originaltitle="movie.original_title"
+      :vote="movie.vote_average"
+    />
     <h2 v-if="arrTv.length > 0">TV series</h2>
-    <ul v-for="objTv in arrTv" :key="objTv.id">
-      <li>{{ objTv.name }}</li>
-      <li>{{ objTv.original_name }}</li>
-      <li>{{ objTv.original_language }}</li>
-      <li>{{ objTv.vote_average }}</li>
-    </ul>
+    <CardTvSeries
+      v-for="movie in arrTv"
+      :key="movie.id"
+      :movie="movie"
+      :name="movie.name"
+      :originallanguage="movie.original_language"
+      :originaltitle="movie.original_name"
+      :vote="movie.vote_average"
+    />
   </div>
 </template>
 
 <script>
+import CardTvSeries from "@/components/CardTvSeries.vue";
+
 export default {
   name: "PageMain",
+  components: {
+    CardTvSeries,
+  },
   props: {
     arrMovies: Array,
     arrTv: Array,
