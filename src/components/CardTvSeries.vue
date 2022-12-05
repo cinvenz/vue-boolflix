@@ -16,11 +16,19 @@
         <div>
           <lang-flag :iso="movie.original_language" />
         </div>
-        <div>
-          {{ vote }}
-        </div>
-        <font-awesome-icon class="text-warning" icon="fa-solid fa-star" />
-        <font-awesome-icon class="text-warning" icon="fa-regular fa-star" />
+
+        <font-awesome-icon
+          v-for="i in vote.vote"
+          :key="i"
+          class="text-warning"
+          icon="fa-solid fa-star"
+        />
+        <font-awesome-icon
+          v-for="i in vote.maxVote - vote.vote"
+          :key="i"
+          class="text-warning"
+          icon="fa-regular fa-star"
+        />
       </div>
     </div>
   </div>
@@ -40,7 +48,7 @@ export default {
     originallanguage: String,
     originaltitle: String,
     languageList: Array,
-    vote: Number,
+    vote: Object,
   },
 };
 </script>

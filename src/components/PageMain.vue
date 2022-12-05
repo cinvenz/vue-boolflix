@@ -18,7 +18,7 @@
       </div>
     </div>
     <div>
-      <h2 v-if="arrTv.length > 0" class="series text-center text-uppercase text-danger pt-4">
+      <h2 v-if="arrTv.length > 0" class="series text-center text-uppercase text-danger pt-2">
         TV series
       </h2>
       <div class="row row-cols-4 g-4 container-cards py-5">
@@ -51,16 +51,19 @@ export default {
   },
   methods: {
     InsertStar(vote) {
-      return Math.ceil(vote / 2);
+      const maxVote = 5;
+      const trueMaxVote = 10;
+
+      return {
+        vote: Math.ceil((vote * maxVote) / trueMaxVote),
+        maxVote,
+      };
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-main {
-  background-color: rgb(78, 73, 73);
-}
 .movies {
   text-shadow: 4px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

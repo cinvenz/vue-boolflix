@@ -62,5 +62,6 @@ export default {
 body {
   font-family: "Lato", sans-serif;
   font-size: 0.8rem;
+  background-color: rgb(78, 73, 73);
 }
 </style>
