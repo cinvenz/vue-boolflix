@@ -10,23 +10,30 @@
         <h2 class="name fw-bold text-uppercase pt-3 pb-2">
           {{ name }}
         </h2>
-        <div class="author">
+        <div>
           {{ originaltitle }}
         </div>
-        <div class="anno">
-          {{ originallanguage }}
+        <div>
+          <lang-flag :iso="movie.original_language" />
         </div>
         <div>
           {{ vote }}
         </div>
+        <font-awesome-icon class="text-warning" icon="fa-solid fa-star" />
+        <font-awesome-icon class="text-warning" icon="fa-regular fa-star" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import LangFlag from "vue-lang-code-flags";
+
 export default {
   name: "CardTvSeries",
+  components: {
+    LangFlag,
+  },
   props: {
     movie: Object,
     name: String,
