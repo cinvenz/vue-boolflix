@@ -14,6 +14,8 @@
           :originallanguage="movie.original_language"
           :originaltitle="movie.original_title"
           :vote="InsertStar(movie.vote_average)"
+          :overview="movie.overview"
+          class="cards"
         />
       </div>
     </div>
@@ -31,6 +33,8 @@
           :originallanguage="movie.original_language"
           :originaltitle="movie.original_name"
           :vote="InsertStar(movie.vote_average)"
+          :overview="movie.overview"
+          class="cards"
         />
       </div>
     </div>
@@ -64,6 +68,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.cards {
+  margin-top: 0;
+  margin-bottom: 6rem;
+  position: relative;
+  width: 18rem;
+  height: 28rem;
+  margin: auto;
+}
 .movies {
   text-shadow: 4px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
